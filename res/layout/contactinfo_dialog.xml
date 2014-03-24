@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_light"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/headerContactContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+        
+        <ImageView
+            android:id="@+id/closeDialog"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:clickable="true"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+			android:src="@drawable/dialog_close"/>
+        <ImageView
+            android:id="@+id/contactProfilePic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFBB33" />
+
+        <TextView
+            android:id="@+id/contactUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/contactProfilePic"
+            android:gravity="center"
+            android:text="NAME"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/buttonsFontSize" />
+
+        <TextView
+            android:id="@+id/contactLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contactUserName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/contactProfilePic"
+            android:gravity="center"
+            android:text="LOCATION"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/buttonsFontSize" />
+
+        <TextView
+            android:id="@+id/contactDateMet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contactLocation"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/contactProfilePic"
+            android:gravity="center"
+            android:text="DATE MET"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/buttonsFontSize" />
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerContactContent"
+        android:animateLayoutChanges="true" >
+    <RelativeLayout
+        android:id="@+id/bodyContactContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- Divisor Telefones -->
+
+        <RelativeLayout
+            android:id="@+id/separadorPhones"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:id="@+id/div1_1"
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/divText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/div1_1"
+                android:text="@string/phones"
+                android:textColor="@color/CinzaEscuro"
+                android:textSize="@dimen/headerFontSize" />
+
+            <LinearLayout
+                android:id="@+id/div1_2"
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/divText1"
+                android:background="@android:color/darker_gray" />
+        </RelativeLayout>
+
+        <!-- Fim Divisor Telefones -->
+
+        <RelativeLayout
+            android:id="@+id/list_phones"
+            android:layout_below="@+id/separadorPhones"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" />
+        <!-- Divisor Emails -->
+
+        <RelativeLayout
+            android:id="@+id/separadorEmail"
+            android:layout_below="@+id/list_phones"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:id="@+id/div2_1"
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/divText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/div2_1"
+                android:text="@string/emails"
+                android:textColor="@color/CinzaEscuro"
+                android:textSize="@dimen/headerFontSize" />
+
+            <LinearLayout
+                android:id="@+id/div2_2"
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/divText2"
+                android:background="@android:color/darker_gray" />
+        </RelativeLayout>
+
+        <!-- Fim Divisor Emails -->
+
+        <RelativeLayout
+            android:layout_below="@+id/separadorEmail"
+            android:id="@+id/list_emails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+                <!-- Divisor Emails -->
+
+        <RelativeLayout
+            android:id="@+id/separadorSn"
+            android:layout_below="@+id/list_emails"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:id="@+id/div3_1"
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/divText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/div3_1"
+                android:text="@string/social_networks"
+                android:textColor="@color/CinzaEscuro"
+                android:textSize="@dimen/headerFontSize" />
+
+            <LinearLayout
+                android:id="@+id/div3_2"
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/divText3"
+                android:background="@android:color/darker_gray" />
+        </RelativeLayout>
+
+        <!-- Fim Divisor Social Networks -->
+
+        <RelativeLayout
+            android:layout_below="@+id/separadorSn"
+            android:id="@+id/list_sns"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+        
+    </RelativeLayout>
+        </ScrollView>
+
+</LinearLayout>

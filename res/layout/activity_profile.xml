@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ActivityContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="vertical"
+    android:paddingTop="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/imageViewFullcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:animateLayoutChanges="true"
+        android:background="#000000"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/imageViewFull"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:src="@drawable/default_profile_pic"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textViewCloseFull"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewFull"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="center"
+            android:text="@string/CloseFullPictureMessage"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/buttonsFontSize"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/containerHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/editText2"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/darker_gray"
+            android:clickable="true"
+            android:maxHeight="75dp"
+            android:maxWidth="75dp"
+            android:minHeight="125dp"
+            android:minWidth="125dp"
+            android:padding="1dp"
+            android:src="@drawable/default_profile_pic" />
+
+        <!-- Set switch campo de nome do usuario e edit campo nome do usuario -->
+
+        <ViewSwitcher
+            android:id="@+id/name_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:paddingBottom="10dp" >
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="none"
+                android:ems="8"
+                android:hint="@string/UserName"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName|textFilter|textPhonetic|textVisiblePassword"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:autoLink="none"
+                android:ems="8"
+                android:inputType="textFilter"
+                android:textColor="@color/CinzaEscuro"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/buttonsFontSize"
+                android:textStyle="normal" />
+        </ViewSwitcher>
+
+        <ViewSwitcher
+            android:id="@+id/number_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/name_switcher"
+            android:layout_below="@+id/name_switcher"
+            android:layout_toRightOf="@+id/imageView1"
+            android:drawablePadding="10dp"
+            android:paddingBottom="10dp" >
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/PhoneNumber"
+                android:imeOptions="actionDone"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/CinzaEscuro"
+                android:textSize="@dimen/buttonsFontSize" />
+        </ViewSwitcher>
+
+        <ImageView
+            android:id="@+id/imageViewEditName"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="13dp"
+            android:layout_toRightOf="@+id/name_switcher"
+            android:clickable="true" />
+
+        <ImageView
+            android:id="@+id/imageViewEditPhone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/number_switcher"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/imagePrivacyCellPhone"
+            android:clickable="true" />
+
+        <ImageView
+            android:id="@+id/imagePrivacyCellPhone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/number_switcher"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@+id/number_switcher"
+            android:clickable="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/separador1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/containerHeader"
+        android:background="@android:color/darker_gray" >
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/maincontent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/separador1"
+        android:animateLayoutChanges="true" >
+
+        <LinearLayout
+            android:id="@+id/panelContent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <!-- Inicio View Telefones -->
+
+            <TextView
+                android:id="@+id/button0"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/othercontacts_2"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="@string/Othercontacts"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel0"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/OtherContactsContent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:animateLayoutChanges="true" />
+            </LinearLayout>
+
+            <!-- Fim View Telefone -->
+
+
+            <!-- Inicio View Email -->
+
+            <TextView
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="E-mail"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+
+                <!-- Inicio Limitador Registrados -->
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp" >
+
+                    <LinearLayout
+                        android:id="@+id/lineL1"
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/lineText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/lineL1"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="@string/RegisteredEmailsHeader"
+                        android:textColor="@color/CinzaEscuro"
+                        android:textSize="@dimen/headerFontSize" />
+
+                    <LinearLayout
+                        android:id="@+id/lineR1"
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/lineText1"
+                        android:background="@android:color/darker_gray" />
+                </RelativeLayout>
+                <!-- Fim Limitador Registrados -->
+                <!-- Inicio Emails Registrados -->
+
+                <RelativeLayout
+                    android:id="@+id/RegisteredEmailsContent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true" />
+
+                <!-- Fim Emails Registrados -->
+                <!-- Inicio Separador Emails novos -->
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp" >
+
+                    <LinearLayout
+                        android:id="@+id/lineL2"
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/lineText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/lineL2"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="@string/AddNewEmailHeader"
+                        android:textColor="@color/CinzaEscuro"
+                        android:textSize="@dimen/headerFontSize" />
+
+                    <LinearLayout
+                        android:id="@+id/lineR2"
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/lineText2"
+                        android:background="@android:color/darker_gray" />
+                </RelativeLayout>
+                <!-- Fim Separador Emails novos -->
+                <!-- Inicio Adicionar Email -->
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="10dp" >
+
+                    <EditText
+                        android:id="@+id/newTextEmailAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:ems="12"
+                        android:hint="@string/EmailHint"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress" />
+
+                    <ImageView
+                        android:id="@+id/imageAdd"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/newTextEmailAddress"
+                        android:clickable="true" />
+                </RelativeLayout>
+                <!-- Fim View Emails -->
+            </LinearLayout>
+            <!-- Inicio View Facebook -->
+
+            <TextView
+                android:id="@+id/button2"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Facebook"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+
+                <fragment
+                    android:id="@+id/login_fragment"
+                    android:name="com.facebook.widget.UserSettingsFragment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+
+            <!-- Fim View Facebook -->
+
+            <TextView
+                android:id="@+id/button3"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/linkedin_2"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="LinkedIn"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+
+                    <FrameLayout android:name="com.main.ivi.LinkedinUserSettingsFragment"
+                    android:id="@+id/login_linkedin_fragment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
+                
+  
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/button4"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/gplus2_2"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Google+"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel4"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/button5"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/twitter_2"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Twitter"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel5"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/postBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOGIN TWITTER"
+                    android:textSize="@dimen/buttonFontSize" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/button6"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/skype_2"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Skype"
+                android:textColor="@color/CinzaEscuro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/panel6"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="true"
+                android:background="#EEEEEE"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#666666" >
+
+        <ImageView
+            android:id="@+id/ShareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/SaveButton"
+            android:clickable="true"
+            android:paddingLeft="80dp"
+            android:paddingRight="40dp"
+            android:src="@android:drawable/ic_menu_share" />
+
+        <ImageView
+            android:id="@+id/SaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:paddingLeft="40dp"
+            android:paddingRight="80dp"
+            android:src="@android:drawable/ic_menu_save" />
+    </RelativeLayout>
+
+</RelativeLayout>

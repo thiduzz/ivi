@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="buttonFontSize">25dp</dimen>
+    <dimen name="buttonsFontSize">18dp</dimen>
+    <dimen name="headerFontSize">15dp</dimen>
+    <dimen name="emailFontSize">17dp</dimen>
+
+</resources>

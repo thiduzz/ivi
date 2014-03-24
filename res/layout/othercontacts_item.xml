@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center" >
+    <ViewSwitcher
+        android:id="@+id/item_switcher"
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp">
+
+        <EditText
+            android:id="@+id/editTextSwitch"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textIsSelectable="false"
+            android:layout_marginLeft="20dp"
+            android:textColor="@android:color/black"
+            android:autoLink="none"
+            android:imeOptions="actionDone"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textViewSwitch"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:autoLink="none"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/buttonsFontSize"
+        	android:textColor="@color/CinzaEscuro"
+            android:textStyle="normal" />
+    </ViewSwitcher>
+
+    <ImageView
+        android:layout_marginLeft="22dp"
+        android:id="@+id/imagePrivacySwitch"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+		android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/item_switcher"
+        android:clickable="true"
+        android:src="@drawable/unlocked" />
+
+    <ImageView
+        android:id="@+id/imageViewEditSwitch"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+		android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/imagePrivacySwitch"
+        android:clickable="true"
+        android:src="@drawable/edit_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

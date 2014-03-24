@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:gravity="center" >
+
+    <ImageView
+        android:layout_marginLeft="22dp"
+        android:id="@+id/contactImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+		android:layout_centerVertical="true"
+        android:clickable="true"
+    	android:gravity="center" 
+        android:src="@drawable/default_profile_pic" />
+	<TextView 
+	    android:layout_marginTop="5dp"
+	    android:id="@+id/contactName"
+	    android:layout_width="fill_parent"
+        android:layout_marginLeft="22dp"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/CinzaEscuro"
+	    android:text="COXACOXACOXA"
+	    android:textStyle="bold"
+	    android:textSize="18dp"
+	    android:layout_toRightOf="@+id/contactImage"/>
+	<TextView 
+	    android:layout_marginTop="10dp"
+	    android:id="@+id/contactPlace"
+	    android:layout_width="wrap_content"
+        android:layout_marginLeft="22dp"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/CinzaEscuro"
+	    android:text="LOCAL"
+	    android:layout_below="@+id/contactName"
+	    android:layout_toRightOf="@+id/contactImage"/>
+	
+		<TextView 
+	    android:layout_marginTop="10dp"
+	    android:id="@+id/contactAddDate"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="DATA"
+	    android:layout_marginLeft="10dp"
+	    android:textColor="@color/CinzaEscuro"
+	    android:layout_below="@+id/contactName"
+	    android:layout_toRightOf="@+id/contactPlace"/>
+</RelativeLayout>
